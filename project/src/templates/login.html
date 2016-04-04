@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user and not user.is_anonymous %}
+  <h3>Hello, {{ user.get_full_name }}!</h3>
+  <br>
+  <a href="/logout">Logout</a>
+{% else %}
+  <p><a href="{% url 'social:begin' backend='linkedin-oauth2' %}?next={{ request.path }}" id="login">Login with Linkedin</a></p>
+  <p><a href="{% url 'social:begin' backend='facebook' %}?next={{ request.path }}" id="login">Login with Facebook</a></p>
+{% endif %}
+
+
+{% endblock %}

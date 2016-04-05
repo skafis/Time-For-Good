@@ -50,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'src.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'project.urls'

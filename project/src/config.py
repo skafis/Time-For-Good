@@ -14,9 +14,7 @@ SOCIAL_AUTH_LOGIN_URL = '/'
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookOAuth2',
-    'social.backends.twitter.TwitterOAuth',
     'social.backends.linkedin.LinkedinOAuth2',
-    'social.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -48,12 +46,6 @@ SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
 SOCIAL_AUTH_FACEBOOK_KEY = '1135371423162152'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'dcadeec0cf756604c5b8dc1eaf3687bb'
 
-SOCIAL_AUTH_TWITTER_KEY = ''
-SOCIAL_AUTH_TWITTER_SECRET = ''
-
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 
 # Field definition for data from linkedin
 

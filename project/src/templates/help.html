@@ -1,7 +1,11 @@
 <img src="profile.jpg" alt="profile image"></img>
 
-
-    <select>
-        <option>I want to help</option>
-         <option>I want to seek help</option>
+    <form>
+    <label for="select">Select an option to change your user type:</label>
+    <select name="link-select" onchange="location = this.value;">
+        <option value="">-------------------</option>
+        <option value = "{% url 'src:helper' %}">I want to help</option>
+        <option value = "{% url 'src:seeker' %}">I want to seek help</option>
     </select>
+    </form>
+    <a href="{% url 'src:browse' %}"> browse Opportunity</a>

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import PostForm
+from .models import Create_opportunity
 
 # 3rd party login imports
 from django.shortcuts import render_to_response, redirect
@@ -86,6 +88,29 @@ def logout(request):
 def seeker(request):	
     return render(request, 'seek.html')
     
+
+#create opportunity form view
+def create_opportunity_form(request):
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit = False)
+        print form.cleaned_data.get("description")
+        instance.save()
+    context = {
+        'form' : form
+    }
+    return render(request, 'create_opportunity.html', context)
+    
+
+    
     
 def helper(request):	
     return render(request, 'help.html')   
+
+def browse(request):	
+    show_items = Create_opportunity.objects.order_by('-created_date')
+    context = {
+        'show_items': show_items
+    }
+    return render(request, 'browse.html', context)
+   

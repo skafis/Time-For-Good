@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from src.models import Person
+from .models import Create_opportunity
 
 
 class RegistrationForm(ModelForm):
@@ -44,3 +45,14 @@ class RegistrationForm(ModelForm):
 class LoginForm(forms.Form):	
 	username = forms.CharField(label=(u'User Name'))
 	password = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
+	
+	
+# creating add opportunity form
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Create_opportunity
+        fields = [
+            "title",
+            "location",
+            "description"
+        ]

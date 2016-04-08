@@ -1,15 +1,60 @@
 {% extends "base.html" %}
 
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+{% endblock %}
+
 {% block content %}
-
-{% if user and not user.is_anonymous %}
-  <h3>Hello, {{ user.get_full_name }}!</h3>
-  <br>
-  <a href="/logout">Logout</a>
-{% else %}
-  <p><a href="{% url 'social:begin' backend='linkedin-oauth2' %}?next={{ request.path }}" id="login">Login with Linkedin</a></p>
-  <p><a href="{% url 'social:begin' backend='facebook' %}?next={{ request.path }}" id="login">Login with Facebook</a></p>
-{% endif %}
-
+<div class="vid-container">
+ <div class="inner-container">
+<div class="box">
+<!--{% if user and not user.is_anonymous %}-->
+<!--  <h3>Hello, {{ user.get_full_name }}!</h3>-->
+<!--  <br>-->
+<!--  <a href="/logout">Logout</a>-->
+<!--{% else %}-->
+  <!-- Login -->
+   <h1>Login with</h1>
+  <div align="center" class="socialbtns">
+    <ul>
+    <li><a href="{% url 'social:begin' backend='facebook' %}?next={{ request.path }}" id="login" class="fa fa-lg fa-facebook"></a></li>
+    <li><a href="{% url 'social:begin' backend='linkedin-oauth2' %}?next={{ request.path }}" id="login" class="fa fa-lg fa-linkedin"></a></li>
+    
+    </ul>
+</div>
+        <h1>OR</h1>
+      <input type="text" placeholder="Username"/>
+      <input type="text" placeholder="Password" style="    margin-top: 5px;"/>
+      <button>Login</button>
+      <!--<p>Not a member? <span>Sign Up</span></p>-->
+<!--{% endif %}-->
+ </div>
+ </div>
+ </div>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+    
+ 
+    
+     
+        
+
+   
+  
+
+
+    
+    
+   
+

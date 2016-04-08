@@ -27,6 +27,7 @@ SECRET_KEY = "kgyt2s5htg$)oqy*e(a$1ihe68&dwd5oic7)s-lgda#)woh7c&"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+AUTH_PROFILE_MODULE = 'src.Person'
 # Application definition
 
 INSTALLED_APPS = (
